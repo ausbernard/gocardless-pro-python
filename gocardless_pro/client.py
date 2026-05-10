@@ -224,11 +224,7 @@ class Client(object):
 
     @property
     def rate_limit(self):
-        return {
-            "ratelimit-limit": self._api_client.rate_limit.limit,
-            "ratelimit-remaining": self._api_client.rate_limit.remaining,
-            "ratelimit-reset": self._api_client.rate_limit.reset
-        }
+        return self._api_client.rate_limit
 
     def _environment_url(self, environment):
         environment_urls = { 
